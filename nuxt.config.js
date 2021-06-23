@@ -13,6 +13,12 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
+  loading: { color: "#fa923f", height: "4px", duration: 5000 },
+  loadingIndicator: {
+    name: "circle",
+    color: "#fa923f"
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -33,7 +39,14 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    headers: {
+      Authorization: 'Bearer xu9qp8s43xiy72hlac4m1i5mtoshkpagkmhfhngx',
+      'Content-Type': 'application/json'
+    }
+  },
+
+  serverMiddleware: ['~/serverMiddleware/selectiveSSR.js'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
